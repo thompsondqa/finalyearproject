@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('{{ url_for('static', filename='image.jpg') }}') no-repeat center center;
+            background-size: cover;
+        }
+
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1000; 
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important; 
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 1; 
+            padding-top: 80px; 
+        }
+    </style>
+    
+    <title>Carbon Emission Prediction</title>
+</head>
+<body>
+    <div class="background-container">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn5oCaqQu2IejRDJNHvzZ9Fp9E4sglrjB-8w&usqp=CAU" alt="Brand Logo">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./predict">Prediction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <main class="container mt-5 pt-5">
+                <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl">
+                    <span class="block text-white xl:inline">Carbon Emission Prediction</span>
+                    <span class="block text-white xl:inline">Machine Learning WebApp</span>
+                </h1>
+                <p class="mt-3 text-white text-base sm:mt-5 sm:text-lg md:text-xl">
+                    Click on Prediction to predict Carbon emission in your surrounding.
+                </p>
+                <div class="mt-5 sm:mt-8">
+                    <a href="./predict" class="btn btn-dark">Prediction</a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+</html>
